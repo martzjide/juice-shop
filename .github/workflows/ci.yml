@@ -74,7 +74,7 @@ jobs:
       - name: "Install application"
         run: npm install
       - name: "Execute unit tests"
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@14672906e672a08bd6eeb15720e9ed3ce869cdd4 # v2.9.0
         with:
           timeout_minutes: 10
           max_attempts: 3
@@ -246,7 +246,7 @@ jobs:
           echo "HEROKU_BRANCH=develop" >> $GITHUB_ENV
           fi
       - name: "Deploy ${{ github.ref }} to Heroku"
-        uses: akhileshns/heroku-deploy@v3.7.8
+        uses: akhileshns/heroku-deploy@7a09db9c4e101a49fe1bef554a60d0447fe1cc51 # v3.7.8
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ env.HEROKU_APP }}
@@ -263,7 +263,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Slack workflow notification"
-        uses: Gamesight/slack-workflow-status@master
+        uses: Gamesight/slack-workflow-status@68bf00d0dbdbcb206c278399aa1ef6c14f74347a # master
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
