@@ -17,7 +17,7 @@ jobs:
     - name: Update tab_news.md
       run: |
         sed -i 's/<!-- next:juice-shop -->/<!-- next:juice-shop -->\n* ${{ github.event.release.published_at }}: juice-shop [`${{ github.event.release.tag_name }}`](https:\/\/github.com\/bkimminich\/juice-shop\/releases\/tag\/${{ github.event.release.tag_name }})/' tab_news.md
-    - uses: stefanzweifel/git-auto-commit-action@v4.0.0
+    - uses: stefanzweifel/git-auto-commit-action@09d175379e84a3f3276b0168ee5890e96c554838 # v4.0.0
       with:
         commit_message: "Add juice-shop ${{ github.event.release.tag_name }} release notes to tab_news.md"
         branch: master
